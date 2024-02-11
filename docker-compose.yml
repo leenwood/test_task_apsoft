@@ -1,0 +1,12 @@
+version: "3.5"
+
+services:
+  database:
+    image: postgres:15
+    container_name: "db-test_task_apsoft"
+    environment:
+      - POSTGRES_DB=parser_db
+      - POSTGRES_USER=parser_user
+      - POSTGRES_PASSWORD=parser_password
+    ports:
+      - "5432:5432"
