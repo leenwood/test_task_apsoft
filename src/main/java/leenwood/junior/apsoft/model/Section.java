@@ -23,8 +23,8 @@ public class Section {
         this.subSections = new ArrayList<>();
     }
 
-    public Section(String title) {
-        this.text = title;
+    public Section(String text) {
+        this.text = text;
         this.subSections = new ArrayList<>();
     }
 
@@ -56,7 +56,7 @@ public class Section {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Section{")
-                .append("title='").append(text).append('\'')
+                .append("text='").append(text).append('\'')
                 .append(", subSections=").append(subSections)
                 .append(", parent=").append(parent)
                 .append('}');

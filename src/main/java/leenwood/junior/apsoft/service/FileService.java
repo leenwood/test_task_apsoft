@@ -80,11 +80,11 @@ public class FileService {
             String line;
             while ((line = reader.readLine()) != null) {
                 int level = getSectionLevel(line);
-                String title = line.trim().replaceFirst("^#+\\s*", "");
+                String text = line.trim().replaceFirst("^#+\\s*", "");
 
                 if (level > currentLevel) {
                     Section subSection = new Section();
-                    subSection.setText(title);
+                    subSection.setText(text);
                     currentSection.getSubSections().add(subSection);
                     subSection.setParent(currentSection);
                     currentSection = subSection;
@@ -96,7 +96,7 @@ public class FileService {
                     }
 
                     Section subSection = new Section();
-                    subSection.setText(title);
+                    subSection.setText(text);
                     if (currentSection != rootSection) {
                         currentSection.getSubSections().add(subSection);
                     } else {
